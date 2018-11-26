@@ -16,7 +16,9 @@ defmodule EctoSQL.MixProject do
           MyXQL,
           Ecto.Adapters.MyXQL.Connection,
           Postgrex,
-          Ecto.Adapters.Postgres.Connection
+          Ecto.Adapters.Postgres.Connection,
+          Tds,
+          Ecto.Adapters.MsSql.Connection
         ]
       ],
 
@@ -51,6 +53,7 @@ defmodule EctoSQL.MixProject do
       {:db_connection, "~> 2.1"},
       postgrex_dep(),
       myxql_dep(),
+      {:tds, "~> 2.0", git: "https://github.com/drbawb/tds"},
 
       # Bring something in for JSON during tests
       {:jason, ">= 0.0.0", only: [:test, :docs]},
